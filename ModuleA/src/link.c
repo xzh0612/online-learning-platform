@@ -152,6 +152,11 @@ int list_remove(ListNode *head, ListNode *node)
     if (node->next != NULL) {
         node->next->prev = node->prev;
     }
+    /* Bug 修复：此前漏改前驱的 next，free 后前驱仍指向已释放节点，
+       形成悬垂指针，后续遍历（如保存文件回写）触发段错误 */
+    if (node->prev != NULL) {
+        node->prev->next = node->next;
+    }
 
     free(node);
     return RES_OK;
