@@ -19,9 +19,10 @@ cd "$PROJECT_ROOT"
 echo "[clean] step1: 递归清理各模块编译产物"
 make clean
 
-echo "[clean] step2: 清理 RELEASE 与日志产物"
-rm -rf RELEASE/learning_platform_file RELEASE/learning_platform_kbd
-rm -f RELEASE/*.out RELEASE/log.log log.log
+echo "[clean] step2: 清理 RELEASE 与根目录的可执行文件、日志产物"
+rm -f RELEASE/learning_platform_file RELEASE/learning_platform_kbd
+rm -f learning_platform_file learning_platform_kbd learning_platform.out
+rm -f RELEASE/*.out log.log RELEASE/log.log
 
 echo "[clean] step3: 兜底清理散落的 .o 文件"
 find . -name '*.o' -delete 2>/dev/null || true

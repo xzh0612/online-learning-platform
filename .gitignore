@@ -8,6 +8,8 @@ ModuleC/obj/
 
 # ---- 编译与运行产物 ----
 learning_platform.out
+learning_platform_file
+learning_platform_kbd
 RELEASE/learning_platform_file
 RELEASE/learning_platform_kbd
 RELEASE/*.tar.gz
