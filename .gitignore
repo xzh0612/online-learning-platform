@@ -1,0 +1,23 @@
+# ---- 编译中间产物 ----
+*.o
+*.a
+*.so
+ModuleA/obj/
+ModuleB/obj/
+ModuleC/obj/
+
+# ---- 编译与运行产物 ----
+learning_platform.out
+RELEASE/learning_platform_file
+RELEASE/learning_platform_kbd
+RELEASE/*.tar.gz
+
+# ---- 日志产物 ----
+log.log
+RELEASE/log.log
+
+# ---- 编辑器与系统文件 ----
+.DS_Store
+*.swp
+.idea/
+.vscode/
