@@ -455,7 +455,7 @@ static void do_course_modify(void)
         nw.hours = atoi(buf);
     }
     if (com_read_str("新课程简介（回车保持不变）: ", buf, (int)sizeof(buf)) == RES_OK && buf[0] != '\0') {
-        snprintf(nw.intro, sizeof(nw.intro), "%s", buf);
+        snprintf(nw.intro, sizeof(nw.intro), "%.*s", (int)sizeof(nw.intro) - 1, buf);
     }
     if (com_read_str("新课程人数上限（回车保持不变）: ", buf, (int)sizeof(buf)) == RES_OK && buf[0] != '\0') {
         nw.capacity = atoi(buf);
