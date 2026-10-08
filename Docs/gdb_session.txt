@@ -1,0 +1,79 @@
+
+===== [1] 复现崩溃 =====
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/aarch64-linux-gnu/libthread_db.so.1".
+=======================================================
+  在线学习平台管理程序  v0.2.0
+  产品形态：文件录入（编译宏 LOAD_FROM_FILE）
+  数据文件：data/user.txt / data/course.txt
+  日志文件：log.log
+=======================================================
+已从文件载入初始信息：用户 5 条，课程 4 条。
+
+------------------------------------------------------------------
+ 在线学习平台管理程序
+------------------------------------------------------------------
+  1. 用户管理
+  2. 课程管理
+  3. 查看全部数据（用户 + 课程）
+  4. 保存数据到文件
+  0. 退出程序
+------------------------------------------------------------------
+请选择: 
+------------------------------------------------------------------
+ 用户管理（User Management）        [用户总数 5]
+------------------------------------------------------------------
+  1. 新增用户信息
+  2. 修改用户信息
+  3. 删除用户信息
+  4. 按用户ID 查看用户详细信息
+  5. 按用户名查看用户详细信息
+  6. 按角色筛选用户列表
+  7. 查看全部用户
+  0. 返回主菜单
+------------------------------------------------------------------
+请选择: 
+==== 删除用户 ====
+要删除的用户ID（回车取消）: 
+Program received signal SIGSEGV, Segmentation fault.
+0x0000aaaaaaaa624c in io_save_users (path=0xaaaaaaaa76e8 "data/user.txt", head=0xaaaaaaac2490) at src/io_file.c:272
+272	                u->uid, u->username, u->password_hash,
+
+===== [2] 调用栈回溯 =====
+#0  0x0000aaaaaaaa624c in io_save_users (path=0xaaaaaaaa76e8 "data/user.txt", head=0xaaaaaaac2490) at src/io_file.c:272
+#1  0x0000aaaaaaaa15d0 in app_save_all (users=0xaaaaaaac2490, courses=0xaaaaaaac24b0) at Main.c:58
+#2  0x0000aaaaaaaa1654 in save_all () at Main.c:70
+#3  0x0000aaaaaaaa1f6c in do_user_delete () at Main.c:257
+#4  0x0000aaaaaaaa2424 in menu_user (users=0xaaaaaaac2490, courses=0xaaaaaaac24b0) at Main.c:358
+#5  0x0000aaaaaaaa373c in main () at Main.c:778
+
+===== [3] 崩溃帧现场（io_save_users）=====
+#0  0x0000aaaaaaaa624c in io_save_users (path=0xaaaaaaaa76e8 "data/user.txt", head=0xaaaaaaac2490) at src/io_file.c:272
+272	                u->uid, u->username, u->password_hash,
+u = 0xaaaaaaac3
+fp = 0xaaaaaaac24d0
+p = 0xaaaaaaac38b0
+detail = "\030\362\371\367\377\377\000\000分析与目标\344\300\366\377\377\377\377\000\000\300i\252\252\252\252\000\000\260\"\254\252\252\252\000\000\353\003\000\000\000\000\000\000\220\374\253\252\252\252\000\0008\367\377\377\377\377\000\000\360\000\000\377\000\000\000\0008\367\377\377\377\377\000\000\320v\252\252\252\252\000\000\360\366\377\377\377\377\000\000\320v\252\252\252\252\000\000\200\201\350\257\002\000\000\0002026-09-"
+n = 2
+267	    fprintf(fp, "# 用户信息：uid|username|password_hash|role|reg_time\n");
+268	    for (p = head->next; p != NULL; p = p->next) {
+269	        const User *u = (const User *)p->data;
+270	
+271	        fprintf(fp, "%d|%s|%s|%s|%s\n",
+272	                u->uid, u->username, u->password_hash,
+273	                user_role_name(u->role), u->reg_time);
+274	        n++;
+275	    }
+276	    fclose(fp);
+
+===== [4] 检查链表头节点：head->next 是否悬垂 =====
+$1 = {data = 0x0, prev = 0x0, next = 0xaaaaaaac3750}
+$2 = (struct ListNode *) 0xaaaaaaac3750
+
+===== [5] 回到删除动作帧，确认删除时调用了 list_remove =====
+#3  0x0000aaaaaaaa1f6c in do_user_delete () at Main.c:257
+257	        save_all();
+detail = "删除用户 lisi（ID=1003，角色 student）\000 \025\372\367\377\377\000\000xv\252\252\252\252\000\000\b\026\372\367\377\377\000\000\030\362\371\367\377\377\000\000`%\372\367\377\377\000\000\320\367\377\377\377\377\000\000,\024\252\252\252\252\000\000\250\371\377\377\377\377\000\000\001\000\000\000\000\000\000\000\220\374\253\252\252\252\000"
+cur = 0xaaaaaaac3820
+uid = 1003
+rc = 0

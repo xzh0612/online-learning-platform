@@ -1,39 +1,39 @@
-2026-10-08 11:51:00 | DATA_LOAD | admin | all | admin | 从 data/user.txt 载入 5 条用户信息
-2026-10-08 11:51:00 | DATA_LOAD | admin | all | admin | 从 data/course.txt 载入 4 条课程信息
-2026-10-08 11:51:01 | USER_ADD | admin | uid:1006 | admin | 新增用户 xuziheng，角色 student
-2026-10-08 11:51:01 | DATA_SAVE | admin | all | admin | 回写 6 条用户信息到 data/user.txt
-2026-10-08 11:51:01 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:02 | USER_ADD | admin | uid:1007 | admin | 新增用户 lunsong，角色 student
-2026-10-08 11:51:02 | DATA_SAVE | admin | all | admin | 回写 7 条用户信息到 data/user.txt
-2026-10-08 11:51:02 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:03 | USER_ADD | admin | uid:1008 | admin | 新增用户 xupan，角色 student
-2026-10-08 11:51:03 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:03 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:06 | COURSE_MOD | admin | cid:2003 | admin | 学生 uid:1006 选课
-2026-10-08 11:51:06 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:06 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:07 | COURSE_MOD | admin | cid:2003 | admin | 学生 uid:1007 选课
-2026-10-08 11:51:07 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:07 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:08 | COURSE_MOD | admin | cid:2002 | admin | 修改课程信息：学分=4 学时=64 上限=48 状态=published
-2026-10-08 11:51:08 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:08 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:11 | USER_MOD | admin | uid:1006 | admin | 修改用户 xi_ziheng（ID=1006，角色 student）
-2026-10-08 11:51:11 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:11 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:12 | USER_MOD | admin | uid:1007 | admin | 修改用户 lunsong（ID=1007，角色 teacher）
-2026-10-08 11:51:12 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:12 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:15 | COURSE_MOD | admin | cid:2001 | admin | 学生 uid:1008 选课
-2026-10-08 11:51:15 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:15 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:16 | COURSE_MOD | admin | cid:2004 | admin | 修改课程信息：学分=3 学时=48 上限=20 状态=published
-2026-10-08 11:51:16 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:16 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:17 | COURSE_MOD | admin | cid:2003 | admin | 修改课程信息：学分=3 学时=48 上限=40 状态=published
-2026-10-08 11:51:17 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:17 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:19 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:19 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
-2026-10-08 11:51:20 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
-2026-10-08 11:51:20 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:19 | DATA_LOAD | admin | all | admin | 从 data/user.txt 载入 5 条用户信息
+2026-10-08 12:35:19 | DATA_LOAD | admin | all | admin | 从 data/course.txt 载入 4 条课程信息
+2026-10-08 12:35:20 | USER_ADD | admin | uid:1006 | admin | 新增用户 xuziheng，角色 student
+2026-10-08 12:35:20 | DATA_SAVE | admin | all | admin | 回写 6 条用户信息到 data/user.txt
+2026-10-08 12:35:20 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:21 | USER_ADD | admin | uid:1007 | admin | 新增用户 lunsong，角色 student
+2026-10-08 12:35:21 | DATA_SAVE | admin | all | admin | 回写 7 条用户信息到 data/user.txt
+2026-10-08 12:35:21 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:22 | USER_ADD | admin | uid:1008 | admin | 新增用户 xupan，角色 student
+2026-10-08 12:35:22 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:22 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:25 | COURSE_MOD | admin | cid:2003 | admin | 学生 uid:1006 选课
+2026-10-08 12:35:25 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:25 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:26 | COURSE_MOD | admin | cid:2003 | admin | 学生 uid:1007 选课
+2026-10-08 12:35:26 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:26 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:27 | COURSE_MOD | admin | cid:2002 | admin | 修改课程信息：学分=4 学时=64 上限=48 状态=published
+2026-10-08 12:35:27 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:27 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:30 | USER_MOD | admin | uid:1006 | admin | 修改用户 xi_ziheng（ID=1006，角色 student）
+2026-10-08 12:35:30 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:30 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:31 | USER_MOD | admin | uid:1007 | admin | 修改用户 lunsong（ID=1007，角色 teacher）
+2026-10-08 12:35:31 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:31 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:34 | COURSE_MOD | admin | cid:2001 | admin | 学生 uid:1008 选课
+2026-10-08 12:35:34 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:34 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:35 | COURSE_MOD | admin | cid:2004 | admin | 修改课程信息：学分=3 学时=48 上限=20 状态=published
+2026-10-08 12:35:35 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:35 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:36 | COURSE_MOD | admin | cid:2003 | admin | 修改课程信息：学分=3 学时=48 上限=40 状态=published
+2026-10-08 12:35:36 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:36 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:38 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:38 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt
+2026-10-08 12:35:39 | DATA_SAVE | admin | all | admin | 回写 8 条用户信息到 data/user.txt
+2026-10-08 12:35:39 | DATA_SAVE | admin | all | admin | 回写 4 条课程信息到 data/course.txt

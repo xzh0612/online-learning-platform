@@ -4,9 +4,9 @@
 
 - 日志文件：`log.log`
 - 日志行数：39
-- 时间范围：2026-10-08 11:51:00 ~ 2026-10-08 11:51:20
-- 生成时间：2026-10-08 11:51:52
-- 主机/用户：MacBook-Air-2.local / yzh
+- 时间范围：2026-10-08 12:35:19 ~ 2026-10-08 12:35:39
+- 生成时间：2026-10-08 12:35:40
+- 主机/用户：ubuntu-linux-2404 / hadoop
 
 ## 一、操作次数统计
 
@@ -53,8 +53,8 @@
 
 | 时间 | 操作 | 目标 | 操作人 | 说明 |
 | --- | --- | --- | --- | --- |
-| 2026-10-08 11:51:01 | USER_ADD | uid:1006 | admin | 新增用户 xuziheng，角色 student |
-| 2026-10-08 11:51:11 | USER_MOD | uid:1006 | admin | 修改用户 xi_ziheng（ID=1006，角色 student） |
+| 2026-10-08 12:35:20 | USER_ADD | uid:1006 | admin | 新增用户 xuziheng，角色 student |
+| 2026-10-08 12:35:30 | USER_MOD | uid:1006 | admin | 修改用户 xi_ziheng（ID=1006，角色 student） |
 
 ## 四、按课程号检索明细
 
@@ -65,11 +65,11 @@
 
 | 时间 | 操作 | 目标 | 操作人 | 说明 |
 | --- | --- | --- | --- | --- |
-| 2026-10-08 11:51:06 | COURSE_MOD | cid:2003 | admin | 学生 uid:1006 选课 |
-| 2026-10-08 11:51:07 | COURSE_MOD | cid:2003 | admin | 学生 uid:1007 选课 |
-| 2026-10-08 11:51:17 | COURSE_MOD | cid:2003 | admin | 修改课程信息：学分=3 学时=48 上限=40 状态=published |
+| 2026-10-08 12:35:25 | COURSE_MOD | cid:2003 | admin | 学生 uid:1006 选课 |
+| 2026-10-08 12:35:26 | COURSE_MOD | cid:2003 | admin | 学生 uid:1007 选课 |
+| 2026-10-08 12:35:36 | COURSE_MOD | cid:2003 | admin | 修改课程信息：学分=3 学时=48 上限=40 状态=published |
 
 ## 附：日志文件压缩归档
 
-- 压缩包：`/Users/yzh/log_archive/log_20261008_115152.tar.gz`
-- 解压目录：`/Users/yzh/log_archive/unpack_20261008_115152`
+- 压缩包：`/home/hadoop/log_archive/log_20261008_123540.tar.gz`
+- 解压目录：`/home/hadoop/log_archive/unpack_20261008_123540`
