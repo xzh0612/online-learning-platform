@@ -141,3 +141,48 @@ void list_foreach(ListNode *head, void (*visit)(void *data, void *arg), void *ar
         visit(p->data, arg);
     }
 }
+
+/* 删除指定节点：仅释放节点自身，不释放 data */
+int list_remove(ListNode *head, ListNode *node)
+{
+    if (head == NULL || node == NULL || node == head) {
+        return RES_ERR_PARAM;
+    }
+
+    if (node->next != NULL) {
+        node->next->prev = node->prev;
+    }
+
+    free(node);
+    return RES_OK;
+}
+
+/* 清空所有数据节点，保留头结点 */
+void list_clear(ListNode *head, void (*freefn)(void *data))
+{
+    ListNode *p;
+    ListNode *next;
+
+    if (head == NULL) {
+        return;
+    }
+    for (p = head->next; p != NULL; p = next) {
+        next = p->next;
+        if (freefn != NULL && p->data != NULL) {
+            freefn(p->data);
+        }
+        free(p);
+    }
+    head->next = NULL;
+}
+
+/* 清空并释放头结点 */
+void list_destroy(ListNode **phead, void (*freefn)(void *data))
+{
+    if (phead == NULL || *phead == NULL) {
+        return;
+    }
+    list_clear(*phead, freefn);
+    free(*phead);
+    *phead = NULL;
+}
