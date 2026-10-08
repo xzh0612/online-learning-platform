@@ -222,7 +222,9 @@ static void do_user_modify(void)
 
     rc = user_modify(g_users, uid, &nw);
     if (rc == RES_OK) {
-        snprintf(detail, sizeof(detail), "修改用户 %s（ID=%d）", nw.username, uid);
+        /* 详情中带上"被操作对象的角色"，便于日志分析脚本区分学生/教师信息修改 */
+        snprintf(detail, sizeof(detail), "修改用户 %s（ID=%d，角色 %s）",
+                 nw.username, uid, user_role_name(nw.role));
         log_user(LOG_USER_MOD, uid, detail);
         save_all();
     }
@@ -246,7 +248,8 @@ static void do_user_delete(void)
         printf("[失败] 用户ID %d 不存在。\n", uid);
         return;
     }
-    snprintf(detail, sizeof(detail), "删除用户 %s（ID=%d）", cur->username, uid);
+    snprintf(detail, sizeof(detail), "删除用户 %s（ID=%d，角色 %s）",
+             cur->username, uid, user_role_name(cur->role));
 
     rc = user_delete(g_users, uid);
     if (rc == RES_OK) {
