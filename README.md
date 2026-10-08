@@ -144,8 +144,30 @@ bash BUILD/clean.sh
 | 阶段 | 负责人 | 内容 | 状态 |
 | --- | --- | --- | --- |
 | 工程框架 | CMO | 目录框架、顶层与模块 Makefile、编译脚本、README | 已完成 |
-| 接口设计 | 项目经理 | `Include/` 下各模块对外接口声明 | 待提交 |
+| 接口设计 | 项目经理 | `Include/` 下各模块对外接口声明 | 已完成 |
 | 用户管理模块 | 开发者 A | `ModuleA` | 待开发 |
 | 课程管理模块 | 开发者 B | `ModuleB` | 待开发 |
 | 录入与日志模块 | 开发者 C | `ModuleC` | 待开发 |
 | 集成联调 | 项目经理 | `Main.c`、样例数据、两形态联调 | 待进行 |
+
+### 模块对外接口一览
+
+| 头文件 | 声明内容 | 实现模块 |
+| --- | --- | --- |
+| `Include/common.h` | 返回码、字段长度、默认路径、内联工具函数 | 头文件（无实现单元） |
+| `Include/link_pub.h` | 公共双向链表接口 | ModuleA |
+| `Include/user_pub.h` | `User` 结构体、角色枚举、用户管理接口 | ModuleA |
+| `Include/course_pub.h` | `Course` 结构体、状态枚举、课程管理接口 | ModuleB |
+| `Include/io_pub.h` | 文件录入、键盘录入、数据回写接口 | ModuleC |
+| `Include/log_pub.h` | 操作日志接口与操作类型枚举 | ModuleC |
+| `Include/sha256_pub.h` | SHA-256 摘要与密码哈希接口 | ModuleC |
+
+依赖关系（自底向上，无循环依赖）：
+
+```
+common.h (纯头文件)
+   └── ModuleA  公共链表 + 用户管理
+          └── ModuleB  课程管理（使用链表维护已选学生列表）
+                 └── ModuleC  数据录入 + 日志 + SHA-256（使用两者构造数据对象）
+```
+
