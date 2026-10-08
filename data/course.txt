@@ -1,0 +1,7 @@
+# 课程信息：cid|name|teacher_id|intro|credit|hours|capacity|status|student_uids
+# enrolled（课程已选人数）不落盘，由 student_uids 字段推导，保证人数与已选学生列表只有一处数据源
+# status 取值：published（已发布）/ unpublished（未发布）；student_uids 为空表示暂无学生选课
+2001|操作系统|1001|进程与线程管理、内存管理、文件系统与设备管理|3|48|30|published|1002,1003
+2002|数据结构|1001|线性表、树、图及其经典算法与复杂度分析|4|64|40|published|1002,1004,1005
+2003|Linux程序开发基础|1001|Shell编程、makefile工程组织、gcc与gdb调试、多模块静态库|3|48|30|published|1002,1003,1004,1005
+2004|编译原理|1001|词法分析、语法分析、语义分析与目标代码生成|3|48|20|unpublished|

@@ -1,0 +1,9 @@
+# 用户信息：uid|username|password_hash|role|reg_time
+# 密码为 SHA-256 加盐哈希，规则：sha256(用户名 + ':' + 明文密码)，文件中不含明文
+# 样例明文对照（便于验收）：sunfeiyan=teacher123，zhangsan/lisi/zhaoliu=123456，wangwu=abc123
+# 注意：zhangsan、lisi、zhaoliu 三个用户明文口令相同，但由于加了用户名作盐，哈希值互不相同
+1001|sunfeiyan|477c18796cbc7b920e68b613a9c799c467c94dd1720d1287d6a59754e0010d66|teacher|2026-09-01 09:00:00
+1002|zhangsan|511dc559ea58d70e135ec3d1c17710fb6715349534baabd3822902a7ae51f546|student|2026-09-01 09:05:00
+1003|lisi|620f427827122f25842279c402cf27008016656d30895756ead292ecae9dfb49|student|2026-09-01 09:10:00
+1004|wangwu|b241b183a69149fbecc9664d3254fb357868304a28de3d3c675e791e9d54b46e|student|2026-09-02 10:20:00
+1005|zhaoliu|baf16ff75d8abb395b4f9343d931c2dbae39edec5fa677a8ff5688d657867070|student|2026-09-02 10:25:00
